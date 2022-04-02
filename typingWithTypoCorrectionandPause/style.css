@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #eee;
+  }
+  
+  .typing.animate {
+    width: 21ch;
+    font-weight: bolder;
+    border-right: 0.1em solid black;
+    font-family: sans-serif;
+    font-size: 22px;
+    animation: type 2.5s steps(20), writer 1s infinite alternate, delete 0.5s steps(5) 2.5s, type2 1s steps(4) 3s forwards, type3 3s steps(22, end) 6s forwards;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .typing.animate::before { 
+    content: "Bons Estudos Guys !";
+    animation: type2 1s steps(4) 3s forwards, type3 3s steps(22, end) 6s forwards;
+  }
+  
+  @keyframes type {
+    from {
+      width: 0;
+    }
+    to {
+      width: 21ch;
+    }
+  }
+  
+  @keyframes type2 {
+    from {
+      width: 16ch;
+      content: "# Bons Estudos Guys !"
+    }
+    to {
+      width: 20ch;
+      content: " # Bons Estudos Guys !"
+    }
+  }
+  
+  @keyframes type3 {
+    from {
+      width: 20ch;
+      content: "# Bons Estudos Guys # Tudo de bom!"
+    }
+    to {
+      width: 42ch;
+      content: "# Bons Estudos Guys # Tudo de bom!"
+    }
+  }
+  
+  @keyframes writer {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  @keyframes delete {
+    from {
+      width: 21ch;
+    }
+    to {
+      width: 16ch;
+    }
+  }
